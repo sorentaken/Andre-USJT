@@ -1,0 +1,105 @@
+create database Empresa;
+
+
+
+use Empresa;
+
+
+
+
+
+create table empresa(
+
+empresaNome char(100) not null,
+
+empresaCNPJ char(100) not null,
+
+empresaRazaoSocial char(100) not null,
+
+empresaConjunto int(100) not null,
+
+empresaAbertura varchar(100) not null,
+
+empresaEncerramento varchar(100) not null,
+
+empresaTemperaturaMin int(100) not null,
+
+empresaTemperaturaMax int(100) not null,
+
+horarioArLigado varchar(100) not null,
+
+horarioArDesligado varchar(100) not null,
+
+primary key(empresaNome),
+
+unique(empresaCNPJ),
+
+unique(empresaRazaoSocial),
+
+unique(empresaConjunto)
+)
+;
+
+
+
+
+create table usuario(
+usuarioNome varchar(10) not null,
+
+usuarioRG varchar(30) not null,
+
+usuarioCPF varchar(30) not null,
+
+usuarioSexo varchar(50) not null,
+
+usuarioConta varchar(10) not null,
+
+usuarioSenha varchar(10) not null,
+
+usuarioHorarioEntrada varchar(100) not null,
+
+usuarioHorarioSaida varchar(100) not null,
+
+usuarioTipo varchar(100) not null,
+
+primary key(usuarioNome),
+
+unique(usuarioRG),
+
+unique(usuarioCPF),
+
+unique(usuarioConta)
+)
+;
+
+
+
+select * from empresa;
+select * from usuario;
+
+
+
+insert into empresa(empresaNome,empresaCNPJ,empresaRazaoSocial,empresaConjunto,empresaAbertura,empresaEncerramento,
+empresaTemperaturaMin,empresaTemperaturaMax,horarioArLigado,horarioArDesligado)
+values("Empresa" , "NDKW" , "Wpk" , '2002' , "08:30" , "17:30" , 15,16 , "08:30"  ,"17:30");
+
+
+
+insert into usuario(usuarioNome,usuarioRG,usuarioCPF,usuarioSexo,usuarioConta,usuarioSenha,
+usuarioHorarioEntrada,usuarioHorarioSaida,usuarioTipo)
+values("Usuario1" , "157896153" , "123456789" , "Masculino" , "1" , "1" , "07:50", "16:30" , "Funcionario");
+
+
+
+insert into usuario(usuarioNome,usuarioRG,usuarioCPF,usuarioSexo,usuarioConta,usuarioSenha,
+usuarioHorarioEntrada,usuarioHorarioSaida,usuarioTipo)
+values("Usuario2" , "123458549" , "456789123" , "Masculino" , "2" , "2", "Acesso Livre", "Acesso Livre" , "Atendente");
+
+
+
+insert into usuario(usuarioNome,usuarioRG,usuarioCPF,usuarioSexo,usuarioConta,usuarioSenha,
+usuarioHorarioEntrada,usuarioHorarioSaida,usuarioTipo)
+values("Usuario3" , "321564782" , "987654231" , "Feminino" , "3" ,  "3", "Acesso Livre", "Acesso Livre" , "Sindico");
+
+
+
